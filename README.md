@@ -3,4 +3,4 @@
 ## Warehouse
 To start the app run
 ```./mvnw spring-boot:run```
-inside "app" Folder
+inside "app" folder
