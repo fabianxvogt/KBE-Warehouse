@@ -1,0 +1,3 @@
+package shipping;
+class ShippingOption {
+}
