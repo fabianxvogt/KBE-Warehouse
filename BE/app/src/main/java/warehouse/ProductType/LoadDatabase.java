@@ -15,7 +15,7 @@ class LoadDatabase {
   CommandLineRunner initDatabase(ProductTypeRepository repository) {
 
     return args -> {
-        ProductType pc = new ProductType("PC", "root");
+        ProductType pc = new ProductType("PC", 0L);
         ProductType mainboard = new ProductType("Mainboard", pc.getId());
         ProductType graficCard = new ProductType("Grafic card", pc.getId());
         ProductType cpu = new ProductType("CPU", mainboard.getId());

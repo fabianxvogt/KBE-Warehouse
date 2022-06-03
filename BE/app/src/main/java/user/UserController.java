@@ -1,4 +1,4 @@
-package warehouse;
+package user;
 
 import java.util.List;
 
@@ -48,7 +48,6 @@ class UserController {
     return repository.findById(id)
       .map(user -> {
         user.setName(newUser.getName());
-        user.setRole(newUser.getRole());
         return repository.save(user);
       })
       .orElseGet(() -> {

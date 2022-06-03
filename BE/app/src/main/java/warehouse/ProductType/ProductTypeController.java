@@ -48,7 +48,7 @@ class ProductTypeController {
     return repository.findById(id)
       .map(productType -> {
         productType.setName(newProductType.getName());
-        productType.setRole(newProductType.getRole());
+        productType.setParent(newProductType.getParent());
         return repository.save(productType);
       })
       .orElseGet(() -> {

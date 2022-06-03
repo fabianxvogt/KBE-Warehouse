@@ -11,14 +11,14 @@ class ProductType {
 
   private @Id @GeneratedValue Long id;
   private String name;
-  private String parent;
+  private Long parent;
 
-  Employee() {}
+  ProductType() {}
 
-  Employee(String name, String parent) {
+  ProductType(String name, Long parent) {
 
     this.name = name;
-    this.role = parent;
+    this.parent = parent;
   }
 
   public Long getId() {
@@ -29,7 +29,7 @@ class ProductType {
     return this.name;
   }
 
-  public String getParent() {
+  public Long getParent() {
     return this.parent;
   }
 
@@ -41,8 +41,8 @@ class ProductType {
     this.name = name;
   }
 
-  public void setParent(String role) {
-    this.role = role;
+  public void setParent(Long parent) {
+    this.parent = parent;
   }
 
   @Override
@@ -64,6 +64,6 @@ class ProductType {
 
   @Override
   public String toString() {
-    return "ProductType{" + "id=" + this.id + ", name='" + this.name + '\'' + ", parent='" + this.parent + '\'' + '}';
+    return "ProductType{" + "id=" + this.id + ", name='" + this.name + '\'' + ", parent='" + this.parent.toString() + '\'' + '}';
   }
 }

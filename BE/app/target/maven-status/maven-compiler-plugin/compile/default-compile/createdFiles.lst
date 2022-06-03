@@ -1,0 +1,15 @@
+warehouse\ProductTypeNotFoundException.class
+warehouse\ProductType.class
+warehouse\ProductTypeController.class
+basket\BasketItem.class
+user\LoadDatabase.class
+warehouse\ProductTypeRepository.class
+shipping\ShippingOption.class
+user\User.class
+user\UserNotFoundException.class
+user\UserController.class
+user\UserRepository.class
+payment\PaymentMethod.class
+warehouse\LoadDatabase.class
+warehouse\MainApp.class
+checkout\CheckoutOption.class
