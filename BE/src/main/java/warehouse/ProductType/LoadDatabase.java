@@ -17,6 +17,8 @@ class LoadDatabase {
     return args -> {
         ProductType pc = new ProductType("PC", "root");
         ProductType mainboard = new ProductType("Mainboard", pc.getId());
+        ProductType graficCard = new ProductType("Grafic card", pc.getId());
+        ProductType cpu = new ProductType("CPU", mainboard.getId());
       log.info("Preloading " + repository.save(pc));
       log.info("Preloading " + repository.save(mainboard));
       log.info("Preloading " + repository.save(new ProductType("Casing", pc.getId())));
