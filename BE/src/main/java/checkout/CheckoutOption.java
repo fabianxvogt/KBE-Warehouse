@@ -1,0 +1,3 @@
+package checkout;
+class CheckoutOption {
+}
