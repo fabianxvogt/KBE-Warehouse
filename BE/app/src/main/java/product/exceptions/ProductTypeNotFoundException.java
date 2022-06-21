@@ -1,4 +1,4 @@
-package warehouse;
+package product;
 
 class ProductTypeNotFoundException extends RuntimeException {
 

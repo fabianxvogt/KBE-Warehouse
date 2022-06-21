@@ -1,4 +1,4 @@
-package warehouse;
+package product;
 
 import java.util.Objects;
 
