@@ -7,17 +7,17 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.annotation.Transient;
 
 @Document
-public class ProductType {
+public class ComponentType {
 
   @Transient
-  public static final String SEQUENCE_NAME = "productType";
+  public static final String SEQUENCE_NAME = "componentType";
 
   private @Id Long id;
   private String name;
   
-  ProductType() {}
+  ComponentType() {}
 
-  ProductType(String name) {
+  ComponentType(String name) {
     this.name = name;
   }
 
@@ -42,9 +42,9 @@ public class ProductType {
 
     if (this == o)
       return true;
-    if (!(o instanceof ProductType))
+    if (!(o instanceof ComponentType))
       return false;
-      ProductType c = (ProductType) o;
+      ComponentType c = (ComponentType) o;
     return Objects.equals(this.id, c.id) && Objects.equals(this.name, c.name);
   }
   @Override
@@ -54,6 +54,6 @@ public class ProductType {
 
   @Override
   public String toString() {
-    return "Product{" + "id=" + this.id + ", name='" + this.name + '\'' + '}';
+    return "Component{" + "id=" + this.id + ", name='" + this.name + '\'' + '}';
   }
 }
