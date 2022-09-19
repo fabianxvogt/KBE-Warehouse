@@ -1,17 +1,47 @@
+
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <NavBar>
+    <router-view v-if="categories && products"
+      :baseURL="baseURL"
+      :categories="categories"
+     :products="products"
+     @fetchData="fetchData"
+     >
+    </router-view>
+  </NavBar>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import NavBar from "./components/NavBar.vue";
+import axios from 'axios';
 
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
+  components: { NavBar},
+  data() {
+    return {
+      baseURL : "https://limitless-lake-55070.herokuapp.com/",
+      products: null,
+      categories: null
+    }
+  },
+  methods: {
+    async fetchData() {
+      // api call to get all the categories
+      await axios.get(this.baseURL + "category/")
+      .then(res => {
+        this.categories = res.data
+      }).catch((err) => console.log('err', err));
+      // api call to get the products
+      await axios.get(this.baseURL + "product/")
+      .then(res => {
+        this.products = res.data
+      }).catch((err) => console.log('err', err));
+    }
+  },
+  mounted() {
+    this.fetchData();
   }
-}
+};
 </script>
 
 <style>
@@ -21,6 +51,15 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+}
+#nav {
+  padding: 30px;
+}
+#nav a {
+  font-weight: bold;
+  color: #2c3e50;
+}
+#nav a.router-link-exact-active {
+  color: #42b983;
 }
 </style>
