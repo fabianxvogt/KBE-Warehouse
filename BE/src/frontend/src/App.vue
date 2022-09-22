@@ -1,13 +1,17 @@
 
 <template>
+  HELLO WORLD
   <NavBar>
-    <router-view v-if="categories && products"
+    <div style="min-height: 60vh">
+    <router-view
+      v-if="products && categories"
       :baseURL="baseURL"
+      :products="products"
       :categories="categories"
-     :products="products"
-     @fetchData="fetchData"
-     >
+      @fetchData="fetchData"
+    >
     </router-view>
+  </div>
   </NavBar>
 </template>
 
@@ -29,12 +33,14 @@ export default {
       // api call to get all the categories
       await axios.get(this.baseURL + "category/")
       .then(res => {
-        this.categories = res.data
+        console.log(res)
+        this.categories = [] //res.data
       }).catch((err) => console.log('err', err));
       // api call to get the products
       await axios.get(this.baseURL + "product/")
       .then(res => {
-        this.products = res.data
+        console.log(res)
+        this.products = [] //res.data
       }).catch((err) => console.log('err', err));
     }
   },

@@ -10,6 +10,11 @@ import EditProduct from "../views/Product/EditProduct";
 
 const routes = [
   {
+    path: '/hello',
+    name: 'Home',
+    component: Home
+  },
+  {
     path: '/',
     name: 'Home',
     component: Home
@@ -66,6 +71,6 @@ const routes = [
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes
-})
+})  
 
 export default router
