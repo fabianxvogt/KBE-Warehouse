@@ -1,3 +1,0 @@
-package basket;
-class BasketItem {
-}

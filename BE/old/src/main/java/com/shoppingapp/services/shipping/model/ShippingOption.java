@@ -1,3 +1,0 @@
-package shipping;
-class ShippingOption {
-}
